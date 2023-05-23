@@ -12,7 +12,7 @@ class Program
     static void Main(string[] args)
     {
         Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
-        bool cont = BoolValueHack.FixBool(Console.ReadLine().ToLower());
+         cont = BoolValueHack.FixBool(Console.ReadLine().ToLower());
         if (cont)
         {
             Console.WriteLine();
@@ -47,7 +47,7 @@ class Program
                         Thread.Sleep(250);
                     }
                     Console.WriteLine();
-                    Console.WriteLine("Would you like to add more? yes/no: ");
+                    Console.Write("Would you like to add more? yes/no: ");
                     addToList = BoolValueHack.FixBool(Console.ReadLine().ToLower());
 
                 }
@@ -74,7 +74,7 @@ class Program
                 int randomNumber = rng.Next(activities.Count);
 
                 string randomActivity = activities[randomNumber];
-                if (userAge > 21 && randomActivity == "Wine Tasting")
+                if (userAge < 21 && randomActivity == "Wine Tasting")
                 {
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");
